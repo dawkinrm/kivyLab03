@@ -7,4 +7,20 @@ Button:
 	pos: (50, 50)
 	background_color: (0, 0, 255, 0.3)
 	on_press: app.play_music()
-	on_release: self.text = "Playing: " + app.sound.source.split('.')[0]
+	on_release: self.text = "Playing:  " + app.sound.source.split('.')[0]
+	
+	Button:
+		text: "Stop"
+		size: (100, 100)
+		pos: (350, 400)
+		background_color: (1, 0, 1, 1)
+		on_press: app.stop_music()
+
+	Slider:
+		id: volume_bar
+		size: (root.width, 100)
+		pos: (50, 50)
+		min: 0
+		max: 1
+		value: 0.5
+		on_value: app.volume_change(self.value)
