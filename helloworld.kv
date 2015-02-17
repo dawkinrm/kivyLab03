@@ -7,3 +7,4 @@ Button:
 	pos: (50, 50)
 	background_color: (0, 0, 255, 0.3)
 	on_press: app.play_music()
+	on_release: self.text = "Playing: " + app.sound.source.split('.')[0]
